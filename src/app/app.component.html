@@ -55,7 +55,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <ul class="menu mt-2 ml-auto">
                             <li class="active"><a href="index.html">Home</a></li>
                             <li><a href="#about" class="scroll">About</a></li>
-                            <li><a href="#menu" class="scroll">List </a></li>
+                            <li><a routerLink="list" >List </a></li>
                             <li><a href="#testimonials"class="scroll">Admin</a></li>
                             <li><a href="#contact" class="scroll">Login</a></li>
                             <li><a href="#contact" class="scroll">Contact</a></li>
@@ -63,6 +63,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                         </ul>
                     </nav>
+                    
                     <!-- //nav -->
                 </div>
             </header>
@@ -88,6 +89,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </div>
     <!--// mian-content -->
     <!-- banner-bottom-wthree -->
+    <router-outlet></router-outlet>
     <section class="banner-bottom-wthree py-5" id="about">
         <div class="container py-md-3">
             <div class="row banner-grids">
