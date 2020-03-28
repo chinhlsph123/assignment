@@ -1,5 +1,5 @@
 <div class="row">
-	<div ngClass="col-lg-4 col-md-6 mb-4" *ngFor="let product of products">
+	<div ngClass="col-lg-4 col-md-6 mb-4" *ngFor="let product of products | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
 		<div class="card h-100">
 				<div class="card-body">
 					<h4 class="card-title">
@@ -11,9 +11,14 @@
 					<h5>${{product.money}}</h5>
 					<p class="card-text">{{product.desc}}</p>>
 				</div>
+        
 				<div class="card-footer">
 					<small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
 				</div>
 		</div>
     
 	</div>
+  <ngb-pagination
+  [(page)]="page"
+  [pageSize]="pageSize"
+  [collectionSize]="products.length"></ngb-pagination>

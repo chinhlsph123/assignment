@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
@@ -14,11 +15,16 @@ import { ContactComponent } from './contact/contact.component';
 import { SaleComponent } from './sale/sale.component';
 import { TypeComponent } from './type/type.component';
 import { NewspComponent } from './newsp/newsp.component';
+import { AdminIndexComponent } from './admin/admin-index/admin-index.component';
+import { ProductManagerComponent } from './admin/product-manager/product-manager.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
-  imports:      [ BrowserModule,AppRoutingModule, FormsModule,HttpClientModule ],
-  declarations: [ AppComponent, HelloComponent,ProductListComponent, AboutComponent, HomeComponent, ContactComponent, SaleComponent, TypeComponent, NewspComponent ],
+  imports:      [ BrowserModule,AppRoutingModule,NgbModule, FormsModule,HttpClientModule ],
+  declarations: [ AppComponent, HelloComponent,ProductListComponent, AboutComponent, HomeComponent, ContactComponent, SaleComponent, TypeComponent, NewspComponent, AdminIndexComponent, ProductManagerComponent, DashboardComponent, MenuComponent, FooterComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ProductService]
 })
