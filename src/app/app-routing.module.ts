@@ -8,6 +8,7 @@ import { MenuComponent } from "./menu/menu.component";
 import { AdminIndexComponent } from "./admin/admin-index/admin-index.component";
 import { DashboardComponent } from "./admin/dashboard/dashboard.component";
 import { ProductManagerComponent } from "./admin/product-manager/product-manager.component";
+import { ControlComponent } from "./admin/control/control.component";
 
 
 const routes: Routes = [
@@ -24,11 +25,10 @@ const routes: Routes = [
   // { path: "product/:id", component: ProductDetailComponent},
 
   {
-    path: "admin",
-    component: AdminIndexComponent,
+    path: "admin",component: AdminIndexComponent,
     children: [
-      { path: "", redirectTo: "dashboard", pathMatch: "full" },
-      { path: "dashboard", component: DashboardComponent },
+      { path: "", redirectTo: "control", pathMatch: "full" },
+      { path: "control", component: ControlComponent },
       { path: "productManager", component: ProductManagerComponent }
     ]
   }

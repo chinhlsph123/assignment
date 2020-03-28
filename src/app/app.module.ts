@@ -17,14 +17,14 @@ import { TypeComponent } from './type/type.component';
 import { NewspComponent } from './newsp/newsp.component';
 import { AdminIndexComponent } from './admin/admin-index/admin-index.component';
 import { ProductManagerComponent } from './admin/product-manager/product-manager.component';
-import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { ControlComponent } from './admin/control/control.component';
 
 
 @NgModule({
   imports:      [ BrowserModule,AppRoutingModule,NgbModule, FormsModule,HttpClientModule ],
-  declarations: [ AppComponent, HelloComponent,ProductListComponent, AboutComponent, HomeComponent, ContactComponent, SaleComponent, TypeComponent, NewspComponent, AdminIndexComponent, ProductManagerComponent, DashboardComponent, MenuComponent, FooterComponent ],
+  declarations: [ AppComponent, HelloComponent,ProductListComponent, AboutComponent, HomeComponent, ContactComponent, SaleComponent, TypeComponent, NewspComponent, AdminIndexComponent, ProductManagerComponent, MenuComponent, FooterComponent, ControlComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ProductService]
 })
