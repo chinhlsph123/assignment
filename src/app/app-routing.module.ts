@@ -29,7 +29,7 @@ const routes: Routes = [
     children: [
       { path: "", redirectTo: "control", pathMatch: "full" },
       { path: "control", component: ControlComponent },
-      { path: "productManager", component: ProductManagerComponent }
+      { path: "product", component: ProductManagerComponent }
     ]
   }
 ];

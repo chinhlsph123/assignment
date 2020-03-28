@@ -1,1 +1,29 @@
-czvxbvcnbvm
+<table class="table table-dark">
+	<thead>
+		<tr>
+			<th scope="col">ID</th>
+			<th scope="col">Tên</th>
+			<th scope="col">Gía</th>
+			<th scope="col">Đánh giá</th>
+		</tr>
+	</thead>
+	<tbody *ngFor="let product of products">
+		<tr>
+			<th scope="row">{{product.id}}</th>
+			<td>{{product.name}}</td>
+			<td>{{product.money}}</td>
+			<td>{{product.desc}}</td>
+
+
+			<td><button type="button" class="btn btn-success">Thêm</button></td>
+			<td><button type="button" class="btn btn-info">Sửa</button></td>
+			<td><button type="button" class="btn btn-danger">Xóa</button></td>
+		</tr>
+
+		<tr>
+
+
+		</tr>
+
+	</tbody>
+</table>
