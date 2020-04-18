@@ -239,6 +239,7 @@
 		<tr>
 			<th scope="col">ID</th>
 			<th scope="col">Tên</th>
+      <th scope="col">ảnh</th>
 			<th scope="col">Gía</th>
 			<th scope="col">Đánh giá</th>
 		</tr>
@@ -246,13 +247,15 @@
 	<tbody *ngFor="let product of products | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize" >
 		<tr>
 			<th scope="row">{{product.id}}</th>
+
 			<td>{{product.name}}</td>
+            <td><img src="{{product.images}}" alt="news image" class="img-fluid"></td>
 			<td>{{product.money}}</td>
 			<td>{{product.desc}}</td>
 
 
 			<td><button class="btn btn-primary" routerLink="/list/edit/{{product.id}}">Sửa</button></td>
-			<td><button type="button" class="btn btn-danger">Xóa</button></td>
+			<td><button class="btn btn-primary" (click)="removeItem(product.id)">Xóa</button></td>
 		</tr>
 
 		<tr>

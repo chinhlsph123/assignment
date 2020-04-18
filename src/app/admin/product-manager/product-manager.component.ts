@@ -28,4 +28,12 @@ export class ProductManagerComponent implements OnInit {
     })
     // this.products = this.productService.getProducts();
   }
+    removeItem(id){
+     return this.productService.removeProduct(id).subscribe(
+       response => { console.log(response)
+            this.products = this.products.filter(product => product.id != id);
+       }
+     );
+
+   }
 }
