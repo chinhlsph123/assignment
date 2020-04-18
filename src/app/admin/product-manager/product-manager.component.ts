@@ -10,6 +10,8 @@ import { ProductService } from '../../product.service';
 export class ProductManagerComponent implements OnInit {
   selected: Product;
   products: Product[];
+  page= 1;
+  pageSize = 6;
   constructor(
     private productService: ProductService
   ) { }

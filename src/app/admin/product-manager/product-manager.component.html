@@ -239,7 +239,7 @@
 			<th scope="col">Đánh giá</th>
 		</tr>
 	</thead>
-	<tbody *ngFor="let product of products">
+	<tbody *ngFor="let product of products | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize" >
 		<tr>
 			<th scope="row">{{product.id}}</th>
 			<td>{{product.name}}</td>
@@ -258,10 +258,12 @@
 		</tr>
 
 	</tbody>
-</table>
-          
+</table>  
+  <ngb-pagination
+  [(page)]="page"
+  [pageSize]="pageSize"
+  [collectionSize]="products.length"></ngb-pagination>
           <router-outlet></router-outlet>
-
         </div>
         <!-- /.container-fluid -->
 
