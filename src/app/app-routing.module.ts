@@ -9,6 +9,8 @@ import { AdminIndexComponent } from "./admin/admin-index/admin-index.component";
 import { DashboardComponent } from "./admin/dashboard/dashboard.component";
 import { ProductManagerComponent } from "./admin/product-manager/product-manager.component";
 import { ControlComponent } from "./admin/control/control.component";
+import { ProductAddComponent } from "./admin/product-add/product-add.component";
+import { ProductEditComponent } from "./admin/product-edit/product-edit.component";
 
 
 const routes: Routes = [
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path: "contact", component: ContactComponent },
   // { path: "service", component: ServiceComponent },
   { path: "list", component: ProductListComponent },
+  { path: "list/add", component: ProductAddComponent },
+  { path: 'list/edit/:productID', component: ProductEditComponent},
   // { path: "list/add", component: ProductAddComponent },
   // { path: "list/:productID", component: ProductDetailComponent },
   // { path: 'list/edit/:productID', component: ProductEditComponent},
