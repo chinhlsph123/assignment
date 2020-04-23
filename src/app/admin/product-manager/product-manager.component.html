@@ -54,16 +54,9 @@
           </button>
 
           <!-- Topbar Search -->
-          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-              <div class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fas fa-search fa-sm"></i>
-                </button>
-              </div>
-            </div>
-          </form>
+    <div class="search-hero">
+      <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Search for a Product">
+    </div>
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -244,7 +237,7 @@
 			<th scope="col">Evaluate</th>
 		</tr>
 	</thead>
-	<tbody *ngFor="let product of products | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize" >
+	<tbody *ngFor="let product of products | filter:searchText| slice: (page-1) * pageSize : (page-1) * pageSize + pageSize"  >
 		<tr>
 			<th scope="row">{{product.id}}</th>
 

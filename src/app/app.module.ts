@@ -22,10 +22,10 @@ import { FooterComponent } from './footer/footer.component';
 import { ControlComponent } from './admin/control/control.component';
 import { ProductAddComponent } from './admin/product-add/product-add.component';
 import { ProductEditComponent } from './admin/product-edit/product-edit.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
-  imports:      [ BrowserModule,AppRoutingModule,NgbModule, FormsModule,HttpClientModule ],
+  imports:      [ BrowserModule,AppRoutingModule,NgbModule, FormsModule,HttpClientModule,Ng2SearchPipeModule ],
   declarations: [ AppComponent, HelloComponent,ProductListComponent, AboutComponent, HomeComponent, ContactComponent, SaleComponent, TypeComponent, NewspComponent, AdminIndexComponent, ProductManagerComponent, MenuComponent, FooterComponent, ControlComponent, ProductAddComponent, ProductEditComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ProductService]
