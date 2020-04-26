@@ -15,6 +15,17 @@ import { NbarComponent } from "./nbar/nbar.component";
 
 
 const routes: Routes = [
+    { path: '', redirectTo: 'navbar', pathMatch: 'full' },
+  { path: '', component: NbarComponent, 
+        children : [
+          { path: '', redirectTo: 'home', pathMatch: 'full' },
+          { path: 'home', component:HomeComponent}, 
+          { path: 'list', component:ProductListComponent},
+          { path: 'contact', component:ContactComponent}, 
+          { path: 'about', component:AboutComponent},
+        ]
+    },
+    
   { path: "", redirectTo: "home", pathMatch: "full" },
   { path: "home", component: HomeComponent },
   { path: "about", component: AboutComponent },
@@ -37,17 +48,6 @@ const routes: Routes = [
       { path: "product", component: ProductManagerComponent }
     ]
   },
-
-  { path: '', redirectTo: 'navbar', pathMatch: 'full' },
-  { path: '', component: NbarComponent, 
-        children : [
-          { path: '', redirectTo: 'home', pathMatch: 'full' },
-          { path: 'home', component:HomeComponent}, 
-          { path: 'list', component:ProductListComponent},
-          { path: 'contact', component:ContactComponent}, 
-          { path: 'about', component:AboutComponent},
-        ]
-    },
 ];
 
 @NgModule({
