@@ -11,6 +11,7 @@ import { ProductManagerComponent } from "./admin/product-manager/product-manager
 import { ControlComponent } from "./admin/control/control.component";
 import { ProductAddComponent } from "./admin/product-add/product-add.component";
 import { ProductEditComponent } from "./admin/product-edit/product-edit.component";
+import { NbarComponent } from "./nbar/nbar.component";
 
 
 const routes: Routes = [
@@ -35,7 +36,18 @@ const routes: Routes = [
       { path: "control", component: ControlComponent },
       { path: "product", component: ProductManagerComponent }
     ]
-  }
+  },
+
+  { path: '', redirectTo: 'navbar', pathMatch: 'full' },
+  { path: '', component: NbarComponent, 
+        children : [
+          { path: '', redirectTo: 'home', pathMatch: 'full' },
+          { path: 'home', component:HomeComponent}, 
+          { path: 'list', component:ProductListComponent},
+          { path: 'contact', component:ContactComponent}, 
+          { path: 'about', component:AboutComponent},
+        ]
+    },
 ];
 
 @NgModule({
