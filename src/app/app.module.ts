@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
@@ -26,7 +26,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NbarComponent } from './nbar/nbar.component';
 
 @NgModule({
-  imports:      [ BrowserModule,AppRoutingModule,NgbModule, FormsModule,HttpClientModule,Ng2SearchPipeModule ],
+  imports:      [ BrowserModule,AppRoutingModule,NgbModule, FormsModule,HttpClientModule,Ng2SearchPipeModule,ReactiveFormsModule ],
   declarations: [ AppComponent, HelloComponent,ProductListComponent, AboutComponent, HomeComponent, ContactComponent, SaleComponent, TypeComponent, NewspComponent, AdminIndexComponent, ProductManagerComponent, MenuComponent, FooterComponent, ControlComponent, ProductAddComponent, ProductEditComponent, NbarComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ProductService]

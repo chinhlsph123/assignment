@@ -1,8 +1,20 @@
-<form>
+<h2>Add product</h2>
+<form #productForm="ngForm" appIdentityRevealed>
+  <div [hidden]="productForm.submitted">
+          <div class="cross-validation" [class.cross-validation-error]="productForm.errors?.identityRevealed && (productForm.touched || productForm.dirty)">
   <div class="form-group">
     <label for="">Name Product</label>
-    <input type="text" class="form-control" name="name" [(ngModel)]="product.name">
+    <input type="text" class="form-control" name="name" [(ngModel)]="product.name"   minlength="4" #name="ngModel" required>
   </div>
+  		<div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+			<div *ngIf="name.errors.required">
+				Name is required.
+			</div>
+			<div *ngIf="name.errors.minlength">
+				Name must be at least 4 characters long.
+			</div>
+		</div>
+
     <div class="form-group">
     <label for="">Photo</label>
     <img [src]="url" height="200"> <br/>
@@ -10,11 +22,26 @@
   </div>
   <div class="form-group">
     <label for="">Price</label>
-    <input type="number" class="form-control" name="money" [(ngModel)]="product.money">
+    <input type="number" class="form-control" name="money" [(ngModel)]="product.money" #money="ngModel"min="0" required>
   </div>
+  			<div *ngIf="money.invalid " class="alert alert-danger">
+				<div *ngIf="money.errors.required">
+					Price is required.
+				</div>
+				<div *ngIf="money.errors.min">
+					Price >0.
+				</div>
+			</div>
     <div class="form-group">
     <label for="">Reviews</label>
-    <input type="text" class="form-control" name="desc" [(ngModel)]="product.desc">
+    <input type="text" class="form-control" name="desc" [(ngModel)]="product.desc" minlength="4" #desc="ngModel" required>
   </div>
-  <button class="btn btn-primary" (click)="addProduct()">Add Product</button>
-</form>s
+  				<div *ngIf="desc.invalid" class="alert alert-danger">
+					<div *ngIf="desc.errors.required">
+						Reviews is required.
+					</div>
+				</div>
+  <button class="btn btn-primary"  (click)="addProduct()">Add Product</button>
+  </div>
+  </div>
+</form>
