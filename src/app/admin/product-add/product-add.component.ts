@@ -9,6 +9,19 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./product-add.component.css']
 })
 export class ProductAddComponent implements OnInit {
+    name = 'Angular';
+  fileToUpload: any;
+  imageUrl: any;
+  handleFileInput(file: FileList) {
+    this.fileToUpload = file.item(0);
+
+    //Show image preview
+    let reader = new FileReader();
+    reader.onload = (event: any) => {
+      this.imageUrl = event.target.result;
+    }
+    reader.readAsDataURL(this.fileToUpload);
+  }
   product: Product = new Product();
   constructor(
     private productService: ProductService,
@@ -21,15 +34,15 @@ export class ProductAddComponent implements OnInit {
         this.productService.addProduct(this.product).subscribe(data => this.router.navigateByUrl('/admin/product'));
   }
   url: string;
-  onSelectFile(event) { // called each time file input changes
-    if (event.target.files && event.target.files[0]) {
-      var reader = new FileReader();
+  // onSelectFile(event) { // called each time file input changes
+  //   if (event.target.files && event.target.files[0]) {
+  //     var reader = new FileReader();
 
-      reader.readAsDataURL(event.target.files[0]); // read file as data url
+  //     reader.readAsDataURL(event.target.files[0]); // read file as data url
 
-      reader.onload = (event) => { // called once readAsDataURL is completed
-        this.url = event.target.result;
-      }
-    }
+  //     reader.onload = (event) => { // called once readAsDataURL is completed
+  //       this.url = event.target.result;
+  //     }
+  //   }
 }
-}
+// }
