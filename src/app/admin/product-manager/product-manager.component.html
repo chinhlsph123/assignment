@@ -249,9 +249,9 @@
 			<td>{{product.money}}</td>
 			<td>{{product.desc}}</td>
 
-
+      <td><button class="btn btn-info" routerLink="/product/detail/{{product.id}}">Detail</button></td>
 			<td><button class="btn btn-primary" routerLink="/list/edit/{{product.id}}">Sửa</button></td>
-			<td><button class="btn btn-primary" (click)="removeItem(product.id)">Xóa</button></td>
+			<td><button class="btn btn-danger" (click)="removeItem(product.id)">Xóa</button></td>
 		</tr>
 
 		<tr>
