@@ -1,0 +1,12 @@
+<div style="width:80%;" class="mx-auto my-3">
+<div class="row" *ngIf="product"  >
+  <div class="col-6">
+    <img src="{{product.images}}" alt="" class="img-fluid">
+  </div>
+  <div class="col-6">
+    <h2>{{product.name}}</h2>
+    <span>Price : {{product.money}}</span>
+    <p>Desc : {{product.desc}}</p>
+  </div>
+</div>
+</div>

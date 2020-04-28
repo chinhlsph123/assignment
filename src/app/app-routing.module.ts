@@ -12,6 +12,7 @@ import { ControlComponent } from "./admin/control/control.component";
 import { ProductAddComponent } from "./admin/product-add/product-add.component";
 import { ProductEditComponent } from "./admin/product-edit/product-edit.component";
 import { NbarComponent } from "./nbar/nbar.component";
+import { ProductDetailComponent } from "./product-detail/product-detail.component";
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
           { path: 'list', component:ProductListComponent},
           { path: 'contact', component:ContactComponent}, 
           { path: 'about', component:AboutComponent},
+          { path: "product/detail/:id", component: ProductDetailComponent },
         ]
     },
     
@@ -45,7 +47,8 @@ const routes: Routes = [
     children: [
       { path: "", redirectTo: "control", pathMatch: "full" },
       { path: "control", component: ControlComponent },
-      { path: "product", component: ProductManagerComponent }
+      { path: "product", component: ProductManagerComponent },
+      { path: "product/detail/:id", component: ProductDetailComponent },
     ]
   },
 ];

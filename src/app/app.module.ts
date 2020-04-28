@@ -24,10 +24,11 @@ import { ProductAddComponent } from './admin/product-add/product-add.component';
 import { ProductEditComponent } from './admin/product-edit/product-edit.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { NbarComponent } from './nbar/nbar.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 
 @NgModule({
   imports:      [ BrowserModule,AppRoutingModule,NgbModule, FormsModule,HttpClientModule,Ng2SearchPipeModule,ReactiveFormsModule ],
-  declarations: [ AppComponent, HelloComponent,ProductListComponent, AboutComponent, HomeComponent, ContactComponent, SaleComponent, TypeComponent, NewspComponent, AdminIndexComponent, ProductManagerComponent, MenuComponent, FooterComponent, ControlComponent, ProductAddComponent, ProductEditComponent, NbarComponent ],
+  declarations: [ AppComponent, HelloComponent,ProductListComponent, AboutComponent, HomeComponent, ContactComponent, SaleComponent, TypeComponent, NewspComponent, AdminIndexComponent, ProductManagerComponent, MenuComponent, FooterComponent, ControlComponent, ProductAddComponent, ProductEditComponent, NbarComponent, ProductDetailComponent ],
   bootstrap:    [ AppComponent ],
   providers: [ProductService]
 })
